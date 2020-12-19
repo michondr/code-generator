@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PhpCodeSniffer">
+    <phpcs_settings>
+      <PhpCSConfiguration tool_path="$USER_HOME$/collabim/collabim-app/bin/phpcs" />
+    </phpcs_settings>
+  </component>
+  <component name="PhpProjectSharedConfiguration" php_language_level="7.4" />
+  <component name="PhpUnit">
+    <phpunit_settings>
+      <PhpUnitSettings load_method="PHPUNIT_PHAR" bootstrap_file_path="$PROJECT_DIR$/src/autoload.php" configuration_file_path="$PROJECT_DIR$/src/autoload.php" custom_loader_path="" phpunit_phar_path="$PROJECT_DIR$/phpunit" use_bootstrap_file="true" />
+    </phpunit_settings>
+  </component>
+</project>

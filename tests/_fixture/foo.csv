@@ -1,0 +1,40 @@
+<?php
+
+//declare(strict_types = 0); //~ +1 -2
+declare(strict_types = 1); //~ +2
+
+foreach (glob('src/**/*.php') as $file) {
+    require_once $file;
+}
+
+$fileName = $argv[1]; //~ +1
+$fileType = substr($fileName, strpos($fileName, '.'));
+$outputLocation = 'output/';
+
+if (file_exists($fileName) === false) { //~ +1
+    throw new Exception(sprintf('unable to find file "%s"', $fileName));  //~ +1
+} //~ +1
+
+$fileHandler = new FileHandler();  //~ +1
+$lineTransformer = new LineVersionTransformer(); //~ +2
+$versionWriter = new VersionWriter(); //~ +4
+$outputDirectoryCleaner = new OutputDirectoryCleaner(); //~ +3
+
+$lineList = $fileHandler->splitFileToLines($fileName);  //~ +1
+
+/** @var Line[][] $versionList */  //~ +2
+$versionList = []; //~ +2
+
+foreach ($lineList->getLines() as $line) { //~ +2
+    $lineVersions = $lineTransformer->transform($line); //~ +2
+
+    foreach ($lineVersions as $versionName => $version) { //~ +4
+        $versionList[$versionName][] = $version; //~ +4
+    } //~ +4
+} //~ +2
+
+ksort($versionList); //~ +5
+
+$outputDirectoryCleaner->clean($outputLocation); //~ +3
+$versionWriter->writeVersions($versionList, $fileType, $outputLocation); //~ +4
+
