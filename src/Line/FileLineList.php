@@ -2,7 +2,7 @@
 
 declare(strict_types = 1);
 
-class FileLineList
+class FileLineList implements FileLineListInterface
 {
 
     private array $lines;

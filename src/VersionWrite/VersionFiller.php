@@ -2,7 +2,7 @@
 
 declare(strict_types = 1);
 
-class VersionFiller
+class VersionFiller implements VersionFillerInterface
 {
     public function fillStructure(array $fileStructure, array $versionList)
     {

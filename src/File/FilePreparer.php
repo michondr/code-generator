@@ -2,7 +2,7 @@
 
 declare(strict_types = 1);
 
-class FilePreparer
+class FilePreparer implements FilePreparerInterface
 {
     public function prepareFileStructure(int $fileRowCount, int $versionCount)
     {

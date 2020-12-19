@@ -2,7 +2,7 @@
 
 declare(strict_types = 1);
 
-class VersionWriter
+class VersionWriter implements VersionWriterInterface
 {
     public function writeVersions(array $fileStructure, string $fileType, string $outputLocation)
     {

@@ -2,7 +2,7 @@
 
 declare(strict_types = 1);
 
-class RegexExtractor
+class RegexExtractor implements RegexExtractorInterface
 {
     private const REGEX_SUCCESS = 1;
     private const REGEX_NOT_MATCHED = 0;

@@ -2,7 +2,7 @@
 
 declare(strict_types = 1);
 
-class LineVersionTransformer
+class LineVersionTransformer implements LineVersionTransformerInterface
 {
 
     private LineFormatter $lineFormatter;

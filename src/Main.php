@@ -2,7 +2,7 @@
 
 declare(strict_types = 1);
 
-class Main
+class Main implements MainInterface
 {
     public function run(string $inputFile, string $outputLocation)
     {

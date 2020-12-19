@@ -2,7 +2,7 @@
 
 declare(strict_types = 1);
 
-class OutputDirectoryManager
+class OutputDirectoryManager implements OutputDirectoryManagerInterface
 {
     public function clear(string $dirName)
     {

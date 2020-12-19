@@ -2,7 +2,7 @@
 
 declare(strict_types = 1);
 
-class FileHandler
+class FileHandler implements FileHandlerInterface
 {
     public function splitFileToLines(array $fileLines): FileLineList
     {

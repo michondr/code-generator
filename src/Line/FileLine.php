@@ -2,7 +2,7 @@
 
 declare(strict_types = 1);
 
-class FileLine
+class FileLine implements FileLineInterface
 {
 
     private int $row;

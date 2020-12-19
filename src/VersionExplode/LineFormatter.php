@@ -2,7 +2,7 @@
 
 declare(strict_types = 1);
 
-class LineFormatter
+class LineFormatter implements LineFormatterInterface
 {
 
     public function removeVersioning(string $line)

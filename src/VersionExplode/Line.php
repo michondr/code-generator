@@ -2,7 +2,7 @@
 
 declare(strict_types = 1);
 
-class Line
+class Line implements LineInterface
 {
 
     private string $content;
