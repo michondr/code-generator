@@ -19,7 +19,7 @@ the single file is split into multiple versions. these versions are based on num
 4) rows without suffixes are carried from the start (from version 0)
 5) output is all the chapter files
     * there are blank lines, the file has same number of rows as the input line (you see changes just by switching between them) - any refformat IDE will handle this in notime
-    * output files have the same type (`.txt`, `.php`, `.java`, `.this-in-not-even-file-type`)
+    * output files have the same type (`.txt`, `.php`, `.java`, `.this-in-not-even-file-type`, etc..)
     * output files are in the folder specified with run command
     * output files have names `0.foo`,`1.foo`,`2.foo`,`3.foo`, etc...
     * how many chapters you add, that many files you'll end up with, plus the 0 version
@@ -31,7 +31,7 @@ the single file is split into multiple versions. these versions are based on num
 
 ### examples
 
-command: `php split_to_chapters.php tests/_fixture/foo_easy.php output3`
+command: `php split_to_chapters.php tests/_fixture/foo_easy.php output`
 
 input file:
 ```php
@@ -43,7 +43,7 @@ declare(strict_types = 1); //~ +2
 die('done'); //~ +3
 echo "done"; //~ -3 +2
 ```
-base chapter `0.php`: 
+base chapter `output/0.php`: 
 ```php
 <?php
 
@@ -54,7 +54,7 @@ base chapter `0.php`:
 
 
 ```
-first chapter `1.php`:
+first chapter `output/1.php`:
 ```php
 <?php
 
@@ -65,7 +65,7 @@ declare(strict_types = 0);
 
 
 ```
-second chapter `2.php`:
+second chapter `output/2.php`:
 ```php
 <?php
 
@@ -76,7 +76,7 @@ declare(strict_types = 1);
 echo "done";
 
 ```
-third chapter `3.php`:
+third chapter `output/3.php`:
 ```php
 <?php
 
