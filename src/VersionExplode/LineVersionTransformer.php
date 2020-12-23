@@ -8,10 +8,13 @@ class LineVersionTransformer
     private LineFormatter $lineFormatter;
     private RegexExtractor $regexExtractor;
 
-    public function __construct()
+    public function __construct(
+        LineFormatter $lineFormatter,
+        RegexExtractor $regexExtractor
+    )
     {
-        $this->lineFormatter = new LineFormatter();
-        $this->regexExtractor = new RegexExtractor();
+        $this->lineFormatter = $lineFormatter;
+        $this->regexExtractor = $regexExtractor;
     }
 
     public function transform(FileLine $line): Line

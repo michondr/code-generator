@@ -10,7 +10,10 @@ class LineVersionTransformerTest extends TestCase
 
     protected function setUp(): void
     {
-        $this->transformer = new LineVersionTransformer();
+        $this->transformer = new LineVersionTransformer(
+            new LineFormatter(),
+            new RegexExtractor()
+        );
     }
 
     /**

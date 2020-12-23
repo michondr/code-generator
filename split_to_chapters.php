@@ -24,5 +24,15 @@ if (is_dir($outputLocation) === false) {
     throw new Exception(sprintf('unable to locate directory "%s"', $outputLocation));
 }
 
-$main = new Main();
+$main = new Main(
+    new FileHandler(),
+    new FilePreparer(),
+    new LineVersionTransformer(
+        new LineFormatter(),
+        new RegexExtractor()
+    ),
+    new VersionFiller(),
+    new VersionWriter(),
+    new OutputDirectoryManager()
+);
 $main->run($fileName, $outputLocation);
